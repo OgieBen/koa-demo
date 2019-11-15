@@ -2,6 +2,7 @@ require('babel-register');
 
 const Koa = require('koa');
 const router = require('koa-router')();
+const axios = require('axios')
 
 const app = module.exports = new Koa();
 
