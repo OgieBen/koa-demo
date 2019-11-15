@@ -1,3 +1,4 @@
+require("dotenv").config();
 require('babel-register');
 
 const Koa = require('koa');
@@ -28,7 +29,7 @@ app.use(async (ctx, next) => {
 
 async function def (ctx) {
   console.log(ctx.ips);
-  ctx.body = `Koa running on ${ctx.request.ip}\n`;
+  ctx.body = `Koa running on ${process.env.IP}\n`;
 };
 
 router.get('/', def)
