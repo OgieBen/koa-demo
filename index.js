@@ -5,6 +5,8 @@ const router = require('koa-router')();
 
 const app = module.exports = new Koa();
 
+app.proxy = true;
+
 // logger
 
 app.use(async (ctx, next) => {
@@ -25,7 +27,7 @@ app.use(async (ctx, next) => {
 // response
 
 async function def (ctx) {
-  ctx.body = `Koa running on ${ctx.request.headers["X-Orig-IP"]}\n`;
+  ctx.body = `Koa running on ${ctx.request.ip}\n`;
 };
 
 router.get('/', def)
