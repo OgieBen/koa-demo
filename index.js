@@ -25,7 +25,7 @@ app.use(async (ctx, next) => {
 // response
 
 async function def (ctx) {
-  ctx.body = `Koa running on ${ctx.request.ip}\n`;
+  ctx.body = `Koa running on ${ctx.request.headers["X-Orig-IP"]}\n`;
 };
 
 router.get('/', def)
