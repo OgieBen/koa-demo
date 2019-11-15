@@ -27,6 +27,7 @@ app.use(async (ctx, next) => {
 // response
 
 async function def (ctx) {
+  console.log(ctx.ips);
   ctx.body = `Koa running on ${ctx.request.ip}\n`;
 };
 
